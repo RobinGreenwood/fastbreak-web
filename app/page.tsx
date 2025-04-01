@@ -14,6 +14,15 @@ import {
   // navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -172,14 +181,14 @@ export default function Home() {
 
           <div className="flex flex-col mx-auto max-w-3xl text-center">
             <h1 className="text-[5em] leading-[1.1em] font-bold my-3 max-w-2xl">
-              Animated titles for startups
+              Animate your words using AI
             </h1>
             <div className="flex flex-col">
               <p className="text-xl text-gray-400">
-                Keep eyeballs stuck on your next ad or product launch video.
+                Keep eyeballs glued on your next ad or product launch video.
               </p>
               <p className="text-xl text-gray-400">
-                You control the message.
+                You input your message.
                 <span className="text-gray-200 font-semibold ms-2">
                   We make it look f*cking great.
                 </span>
@@ -201,14 +210,41 @@ export default function Home() {
 
         <div className="flex gap-4 items-center flex-row sm:flex-row mt-6">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-semibold text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-gray-200 dark:hover:bg-[#ccc] font-semibold text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             Join beta
           </a>
-          <a>See example</a>
+          <Dialog>
+            <DialogTrigger className="rounded-full transition-colors flex items-center justify-center text-white gap-2 hover:bg-gray-800/40 dark:hover:bg-gray-900/40 font-semibold text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto hover:cursor-pointer">
+              See example
+            </DialogTrigger>
+            <DialogContent className="min-w-[800px]">
+              <DialogHeader>
+                <DialogTitle>Example</DialogTitle>
+                <DialogDescription>
+                  <div className="py-2 grid grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-2">
+                      <label>Input</label>
+                      <div className="flex flex-1 border border-accent rounded-lg p-2 text-sm text-gray-200">
+                        Keep audience eyes glued on your next ad, demo, or
+                        launch video. Just add your message as text, and use AI
+                        to make it look fuckin great.
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label>Output</label>
+                      <div className="flex flex-1 rounded-lg overflow-hidden">
+                        <video src="/demo.mp4" autoPlay muted loop />
+                      </div>
+                    </div>
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
       <div className="mx-auto w-full px-3 relative max-w-screen-lg lg:px-4 xl:px-0">
