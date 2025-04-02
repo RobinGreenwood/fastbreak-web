@@ -120,3 +120,16 @@
     @apply bg-background text-foreground;
   }
 }
+.effect-font-hero{
+  -webkit-text-stroke: .4px #ffffff80;
+  -webkit-text-fill-color: transparent;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, .2), 1px 1px 0 rgba(0, 0, 0, .1);
+
+}
+.effect-font-gradient{
+  background: linear-gradient(to right bottom, rgb(255, 255, 255) 30%, rgba(255, 255, 255, .5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: unset;
+}
