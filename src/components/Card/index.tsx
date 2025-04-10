@@ -133,7 +133,7 @@ export const Card: React.FC<{
               {populatedAuthor?.name && (
                 <>
                   {authorAvatar?.url ? (
-                    <img
+                    <Image
                       src={authorAvatar.url}
                       alt={authorAvatar.alt || populatedAuthor.name}
                       className="w-6 h-6 rounded-full"

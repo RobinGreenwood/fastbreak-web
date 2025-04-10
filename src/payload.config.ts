@@ -67,7 +67,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
       ssl: {
         rejectUnauthorized: true,
-        ca: fs.readFileSync(process.env.SSL_CERT_PATH || '').toString(),
+        ca: process.env.SSL_CERT_PATH,
       },
     },
   }),

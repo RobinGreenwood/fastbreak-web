@@ -4,6 +4,7 @@ import type { Post } from "@/payload-types";
 import { Media } from "@/components/Media";
 import { formatAuthors } from "@/utilities/formatAuthors";
 import { formatDateFull } from "@/utilities/formatDateTime";
+import Image from "next/image";
 
 export const PostHero: React.FC<{
   post: Post;
@@ -43,7 +44,7 @@ export const PostHero: React.FC<{
           {hasAuthors && (
             <div className="flex flex-row gap-2 items-center">
               {authorAvatar?.url && (
-                <img
+                <Image
                   src={authorAvatar.url}
                   alt={authorAvatar.alt || populatedAuthors?.[0]?.name}
                   className="w-6 h-6 rounded-full"
