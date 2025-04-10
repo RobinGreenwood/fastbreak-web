@@ -17,11 +17,12 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "migrate:create": "payload migrate:create --migrations-dir ./migrations",
-    "migrate": "payload migrate --migrations-dir ./migrations",
-    "migrate:down": "payload migrate:down --migrations-dir ./migrations",
-    "migrate:status": "payload migrate:status --migrations-dir ./migrations",
-    "migrate:fresh": "cross-env NODE_ENV=production payload migrate:fresh --migrations-dir ./migrations"
+    "migrate:create": "cross-env payload migrate:create --migrations-dir ./migrations",
+    "migrate": "cross-env payload migrate --migrations-dir ./migrations",
+    "migrate:down": "cross-env payload migrate:down --migrations-dir ./migrations",
+    "migrate:status": "cross-env payload migrate:status --migrations-dir ./migrations",
+    "migrate:fresh": "cross-env payload migrate:fresh --migrations-dir ./migrations",
+    "migrate:reset": "cross-env payload migrate:reset --migrations-dir ./migrations"
   },
   "dependencies": {
     "@payloadcms/admin-bar": "3.31.0",
