@@ -20,7 +20,8 @@
     "migrate:create": "payload migrate:create --migrations-dir ./migrations",
     "migrate": "payload migrate --migrations-dir ./migrations",
     "migrate:down": "payload migrate:down --migrations-dir ./migrations",
-    "migrate:status": "payload migrate:status --migrations-dir ./migrations"
+    "migrate:status": "payload migrate:status --migrations-dir ./migrations",
+    "migrate:fresh": "cross-env NODE_ENV=production payload migrate:fresh --migrations-dir ./migrations"
   },
   "dependencies": {
     "@payloadcms/admin-bar": "3.31.0",
