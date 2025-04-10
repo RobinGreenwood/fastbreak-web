@@ -74,6 +74,8 @@ export const Card: React.FC<{
         <div className="w-full h-[280px] overflow-hidden relative border border-border rounded-xl">
           {heroImage && typeof heroImage !== "string" && thumbnail && (
             <Image
+              width={24}
+              height={24}
               src={thumbnail}
               alt={titleToUse || "Hero Image"}
               layout="fill"

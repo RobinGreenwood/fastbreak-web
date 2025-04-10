@@ -46,6 +46,8 @@ export const PostHero: React.FC<{
               {authorAvatar?.url && (
                 <Image
                   src={authorAvatar.url}
+                  width={24}
+                  height={24}
                   alt={authorAvatar.alt || populatedAuthors?.[0]?.name}
                   className="w-6 h-6 rounded-full"
                 />
