@@ -156,11 +156,11 @@ export const Card: React.FC<{
             </div>
           </>
         )}
-        {description && (
+        {/* {description && (
           <div className="mt-2">
             {description && <p>{sanitizedDescription}</p>}
           </div>
-        )}
+        )} */}
       </div>
     </article>
   );

@@ -15,6 +15,8 @@ import {
   // NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
+import Image from "next/image";
+
 type NavMenuType = {
   items: {
     link: {
@@ -44,7 +46,7 @@ export const NavMenu: React.FC<NavMenuType> = ({ items }) => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="grid grid-cols-2 gap-4 p-4 md:w-[400px] lg:w-[500px]">
+            <div className="grid grid-cols-2 gap-4 p-4 md:w-[400px]">
               <div className="col-span-1">
                 <ul className="space-y-4">
                   {items
@@ -53,7 +55,10 @@ export const NavMenu: React.FC<NavMenuType> = ({ items }) => {
                     )
                     .map((item, i) => (
                       <li key={i}>
-                        <NavigationMenuLink asChild>
+                        <NavigationMenuLink
+                          asChild
+                          className="rounded-xl w-12 max-w-12"
+                        >
                           <a
                             href={
                               (typeof item.link.reference?.value === "object" &&
@@ -64,12 +69,19 @@ export const NavMenu: React.FC<NavMenuType> = ({ items }) => {
                             }
                             target={item.link.newTab ? "_blank" : "_self"}
                             rel="noopener noreferrer"
-                            className="rounded-lg"
+                            className="rounded-xl w-12 max-w-12"
                           >
-                            <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
-                              <div className="mb-2 mt-4 text-lg font-medium">
+                            <div className="relative flex h-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-3 no-underline outline-none focus:shadow-md">
+                              <div className="mb-2 text-sm font-medium mx-2 py-2">
                                 {item.link.label}
                               </div>
+                              <Image
+                                className="relative "
+                                height={100}
+                                src="/assets/Intro-lines.png"
+                                alt="Techstars"
+                                width={100}
+                              />
                             </div>
                           </a>
                         </NavigationMenuLink>

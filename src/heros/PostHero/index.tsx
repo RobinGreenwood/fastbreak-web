@@ -41,15 +41,16 @@ export const PostHero: React.FC<{
               {subtitel}
             </h3>
           </div>
+
           {hasAuthors && (
             <div className="flex flex-row gap-2 items-center">
               {authorAvatar?.url && (
                 <Image
                   src={authorAvatar.url}
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
                   alt={authorAvatar.alt || populatedAuthors?.[0]?.name}
-                  className="w-6 h-6 rounded-full"
+                  className="w-8 h-8 rounded-full"
                 />
               )}
               <p className="text-sm text-muted-foreground">
