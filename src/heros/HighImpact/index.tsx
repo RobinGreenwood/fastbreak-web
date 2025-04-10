@@ -24,12 +24,15 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
     setHeaderTheme("dark");
   });
 
-  const headerContent = richText?.root.children.find(
+  const headerContent = richText?.root.children.filter(
     (child) => child.type === "heading"
-  ) as SerializedHeadingNode | undefined;
+  ) as SerializedHeadingNode[] | undefined;
+
   const otherContent = richText?.root.children.filter(
     (child) => child.type !== "heading"
   );
+
+  console.log("1. otherContent", otherContent);
 
   return (
     <div
@@ -49,10 +52,25 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
         </div>
 
         <div className="flex flex-col gap-6 container mb-8 z-10 relative items-center justify-center max-w-[44rem] text-center">
-          {headerContent?.children?.[0] && (
-            <h1 className="effect-font-hero effect-font-gradient text-4xl sm:text-6xl font-medium">
-              {(headerContent.children[0] as SerializedTextNode).text}
-            </h1>
+          {headerContent && headerContent.length > 0 && (
+            <div className="flex flex-col gap-4">
+              {headerContent.map((heading, index) => {
+                const textSize =
+                  heading.tag === "h1"
+                    ? "text-4xl sm:text-6xl font-medium"
+                    : "text-xl font-light";
+                const HeadingComponent = heading.tag === "h1" ? "h1" : "h4";
+
+                return (
+                  <HeadingComponent
+                    key={index}
+                    className={`effect-font-hero effect-font-gradient ${textSize} `}
+                  >
+                    {(heading.children[0] as SerializedTextNode).text}
+                  </HeadingComponent>
+                );
+              })}
+            </div>
           )}
 
           {otherContent && otherContent.length > 0 && richText && (

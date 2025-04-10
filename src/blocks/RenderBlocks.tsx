@@ -19,7 +19,7 @@ const blockComponents = {
 };
 
 export const RenderBlocks: React.FC<{
-  blocks: NonNullable<Page["layout"]>;
+  blocks: Page["layout"][0][];
 }> = (props) => {
   const { blocks } = props;
 

@@ -148,11 +148,17 @@ const config = {
                 fontSize: '1.5rem',
                 fontWeight: 500,
               },
-              h4: {
+              h3: {
                 fontSize: '0.85rem',
                 fontWeight: 500,
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
+                color: 'hsl(var(--secondary-foreground))'
+              },
+              h4: {
+                fontSize: '0.85rem',
+                fontWeight: 500,
+                letterSpacing: '0.05em',
                 color: 'hsl(var(--secondary-foreground))',
               },
               p: {
