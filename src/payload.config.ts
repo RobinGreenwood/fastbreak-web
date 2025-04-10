@@ -18,6 +18,8 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 
+import { migrations } from '../migrations'
+
 import fs from 'fs'
 
 const filename = fileURLToPath(import.meta.url)
@@ -70,6 +72,7 @@ export default buildConfig({
         ca: process.env.SSL_CERT_PATH
       },
     },
+    prodMigrations: migrations,
   }),
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),

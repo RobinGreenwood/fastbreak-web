@@ -24,10 +24,10 @@ export async function Footer() {
             Backed by{" "}
             <span>
               <Image
+                height={100}
                 src="/assets/techstars-darkmode.svg"
                 alt="Techstars"
                 width={100}
-                height={100}
               />
             </span>
           </p>
