@@ -60,7 +60,7 @@ export const Card: React.FC<{
   const href = `/blog/${slug}`;
 
   const populatedAuthor = populatedAuthors?.[0] as User | undefined;
-  const authorAvatar = populatedAuthor?.avatar as any;
+  // const authorAvatar = populatedAuthor?.avatar as any;
   const heroImage = doc?.heroImage as Media | undefined;
   const thumbnail =
     heroImage?.sizes?.small?.url || heroImage?.sizes?.thumbnail?.url;
@@ -132,17 +132,14 @@ export const Card: React.FC<{
             <div className="flex py-2 flex-row gap-2 text-[0.8em] items-center">
               {populatedAuthor?.name && (
                 <>
-                  {authorAvatar?.url ? (
-                    <Image
-                      width={24}
-                      height={24}
-                      src={authorAvatar.url}
-                      alt={authorAvatar.alt || populatedAuthor.name}
-                      className="w-6 h-6 rounded-full"
-                    />
-                  ) : (
-                    <p>No avatar</p>
-                  )}
+                  <Image
+                    width={24}
+                    height={24}
+                    src="/assets/me-cropped.png"
+                    alt="robin-profile-pic"
+                    className="w-6 h-6 rounded-full"
+                  />
+
                   <p className="text-primary">{populatedAuthor.name}</p>
                   <span>{"·"}</span>
                 </>
