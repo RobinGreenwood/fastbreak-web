@@ -74,6 +74,12 @@ export default buildConfig({
         rejectUnauthorized: false,
         ca: process.env.SSL_CERT_PATH
       },
+      max: 10,
+      min: 0,
+      idleTimeoutMillis: 60000,
+      connectionTimeoutMillis: 10000,
+      keepAlive: true,
+      keepAliveInitialDelayMillis: 10000
     },
     prodMigrations: migrations,
   }),

@@ -46,7 +46,7 @@ export const NavMenu: React.FC<NavMenuType> = ({ items }) => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="grid grid-cols-2 gap-4 p-4 md:w-[400px]">
+            <div className="grid grid-cols-2 gap-4 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <div className="col-span-1">
                 <ul className="space-y-4">
                   {items
