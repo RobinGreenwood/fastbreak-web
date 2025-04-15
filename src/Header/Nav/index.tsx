@@ -14,7 +14,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
 
   return (
     <nav className="flex gap-3 items-center">
-      <NavMenu items={navItems} />
+      {/* <NavMenu items={navItems} /> */}
     </nav>
   );
 };

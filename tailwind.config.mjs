@@ -121,8 +121,20 @@ const config = {
               h1: {
                 fontWeight: 'normal',
                 marginBottom: '0.25em',
+                color: "red",
+              },
+              h4: {
+                fontSize: '0.85rem',
+                fontWeight: 500,
+                letterSpacing: '0.05em',
+                color: 'hsl(var(--muted-foreground))',
+              },
+              p: {
+                fontSize: '1rem',
+                color: 'hsl(var(--muted-foreground))',
               },
             },
+
           ],
         },
         base: {
@@ -159,7 +171,7 @@ const config = {
                 fontSize: '0.85rem',
                 fontWeight: 500,
                 letterSpacing: '0.05em',
-                color: 'hsl(var(--secondary-foreground))',
+                color: 'hsl(var(--muted-foreground))',
               },
               p: {
                 fontSize: '1rem',

@@ -75,12 +75,13 @@ export default buildConfig({
         rejectUnauthorized: false,
         ca: process.env.SSL_CERT_PATH
       },
-      max: 10,
+      max: 5,
       min: 0,
-      idleTimeoutMillis: 60000,
+      idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 10000,
       keepAlive: true,
-      keepAliveInitialDelayMillis: 10000
+      keepAliveInitialDelayMillis: 10000,
+      application_name: 'payload-cms'
     },
     prodMigrations: migrations,
   }),

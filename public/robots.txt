@@ -8,4 +8,4 @@ Host: https://example.com
 # Sitemaps
 Sitemap: https://example.com/sitemap.xml
 Sitemap: https://example.com/pages-sitemap.xml
-Sitemap: https://example.com/posts-sitemap.xml
+Sitemap: https://example.com/blog-sitemap.xml

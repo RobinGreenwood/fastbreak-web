@@ -39,8 +39,8 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
       className="relative flex items-center justify-center text-white"
       data-theme="dark"
     >
-      <div className="flex flex-col justify-center items-center">
-        <div className="w-44 select-none items-center mb-8">
+      <div className="flex flex-col justify-center items-center ">
+        <div className="w-48 select-none items-center mb-8">
           {media && typeof media === "object" && (
             <Media
               fill={false}
@@ -51,20 +51,24 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
           )}
         </div>
 
-        <div className="flex flex-col gap-6 container mb-8 z-10 relative items-center justify-center max-w-[44rem] text-center">
+        <div className="flex flex-col gap-6 container mb-8 z-10 relative items-center justify-center max-w-[52rem] text-center">
           {headerContent && headerContent.length > 0 && (
             <div className="flex flex-col gap-4">
               {headerContent.map((heading, index) => {
                 const textSize =
                   heading.tag === "h1"
-                    ? "text-4xl sm:text-6xl font-medium"
+                    ? "text-4xl sm:text-6xl font-semibold"
                     : "text-xl font-light";
                 const HeadingComponent = heading.tag === "h1" ? "h1" : "h4";
+                const h4Classes =
+                  heading.tag === "h4"
+                    ? "text-muted-foreground max-w-[460px] mx-auto"
+                    : "effect-font-hero effect-font-gradient";
 
                 return (
                   <HeadingComponent
                     key={index}
-                    className={`effect-font-hero effect-font-gradient ${textSize} `}
+                    className={`${h4Classes} ${textSize}`}
                   >
                     {(heading.children[0] as SerializedTextNode).text}
                   </HeadingComponent>
@@ -83,11 +87,15 @@ export const HighImpactHero: React.FC<Page["hero"]> = ({
             />
           )}
           {Array.isArray(links) && links.length > 0 && (
-            <ul className="flex justify-center gap-4">
+            <ul className="flex justify-center gap-4 mt-2">
               {links.map(({ link }, i) => {
                 return (
                   <li key={i}>
-                    <CMSLink className="rounded-full" size={"lg"} {...link} />
+                    <CMSLink
+                      className="rounded-full font-semibold"
+                      size={"lg"}
+                      {...link}
+                    />
                   </li>
                 );
               })}
